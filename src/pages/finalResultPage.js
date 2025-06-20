@@ -16,6 +16,7 @@ export const initFinalResultPage = () => {
     correctAnswers,
     totalQuestions
   );
+  finalResultElement.classList.add('container');
   userInterface.appendChild(finalResultElement);
 
   document
