@@ -8,6 +8,7 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { initFinalResultPage } from './finalResultPage.js'; //  Import final result page
+import { saveQuizProgress } from '../data.js';
 
 function setStatusClass(element, correct) {
   if (correct) {
@@ -22,6 +23,7 @@ function selectAnswer(e, answersListElement) {
   const correct = selectedAnswer.parentElement.dataset.correct === 'true';
   quizData.questions[quizData.currentQuestionIndex].selected =
     selectedAnswer.id;
+  saveQuizProgress();
   if (correct) {
     quizData.score++;
   }
@@ -51,7 +53,7 @@ export const initQuestionPage = () => {
 
   // Create a question element, passing the current score
   const questionElement = createQuestionElement(
-    currentQuestion.text,
+    currentQuestion,
     quizData.score,
     quizData.currentQuestionIndex + 1,
     quizData.questions.length
@@ -63,7 +65,7 @@ export const initQuestionPage = () => {
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
-    // Setting the attribute correct/incorrect answer to each button (list element)
+    // Setting the attribute correct/incorrect answer to each button(list element)
     if (key === currentQuestion.correct) {
       answerElement.dataset.correct = true;
     } else {
@@ -83,6 +85,7 @@ export const initQuestionPage = () => {
 
 const nextQuestion = () => {
   quizData.currentQuestionIndex++;
+  saveQuizProgress();
 
   if (quizData.currentQuestionIndex >= quizData.questions.length) {
     initFinalResultPage(); // Show results when finished

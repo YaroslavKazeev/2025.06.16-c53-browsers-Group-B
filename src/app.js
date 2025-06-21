@@ -1,10 +1,9 @@
-import { quizData } from './data.js';
+import { quizData, loadQuizProgress } from './data.js';
 import { initWelcomePage } from './pages/welcomePage.js';
 
 const loadApp = () => {
-  quizData.currentQuestionIndex = 0;
-
-  initWelcomePage();
+  loadQuizProgress(); //  Load saved progress from localStorage
+  initWelcomePage(); //  Show welcome/start screen
 };
 
 window.addEventListener('load', loadApp);

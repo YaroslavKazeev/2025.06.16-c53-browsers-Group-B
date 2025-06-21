@@ -16,7 +16,7 @@ export const quizData = {
   questions: [
     {
       text: 'Which city is considered the most beautiful in the Netherlands?',
-      image: '/public/images/0.jpg',
+      image: './public/images/0.jpg',
       answers: {
         a: 'Rotterdam',
         b: 'Amsterdam',
@@ -28,7 +28,7 @@ export const quizData = {
     },
     {
       text: 'In which city can you find the famous "dancing houses"?',
-      image: '/public/images/1.jpg',
+      image: './public/images/1.jpg',
       answers: {
         a: 'Haarlem',
         b: 'Amsterdam',
@@ -40,7 +40,7 @@ export const quizData = {
     },
     {
       text: 'What is the most popular traditional Dutch dish?',
-      image: '/public/images/2.jpg',
+      image: './public/images/2.jpg',
       answers: {
         a: 'Herring with onions',
         b: 'Fries with mayonnaise',
@@ -53,7 +53,7 @@ export const quizData = {
     {
       text:
         'Which city is called the "city of the future" because of its modern architecture?',
-      image: '/public/images/3.jpg',
+      image: './public/images/3.jpg',
       answers: {
         a: 'Maastricht',
         b: 'Rotterdam',
@@ -65,7 +65,7 @@ export const quizData = {
     },
     {
       text: 'What is the most popular Dutch supermarket chain?',
-      image: '/public/images/4.jpg',
+      image: './public/images/4.jpg',
       answers: {
         a: 'Jumbo',
         b: 'Albert Heijn',
@@ -78,7 +78,7 @@ export const quizData = {
     {
       text:
         'Which city is the political capital of the Netherlands, where the government is located?',
-      image: '/public/images/5.jpg',
+      image: './public/images/5.jpg',
       answers: {
         a: 'Amsterdam',
         b: 'Rotterdam',
@@ -90,7 +90,7 @@ export const quizData = {
     },
     {
       text: 'What is the most popular means of transport among locals?',
-      image: '/public/images/6.jpg',
+      image: './public/images/6.jpg',
       answers: {
         a: 'Bicycles',
         b: 'Buses',
@@ -102,7 +102,7 @@ export const quizData = {
     },
     {
       text: 'What is the name of the famous tulip park that opens in spring?',
-      image: '/public/images/7.jpg',
+      image: './public/images/7.jpg',
       answers: {
         a: 'Keukenhof',
         b: 'Vondelpark',
@@ -114,7 +114,7 @@ export const quizData = {
     },
     {
       text: 'Which of these cheeses are originally from the Netherlands?',
-      image: '/public/images/8.jpg',
+      image: './public/images/8.jpg',
       answers: {
         a: 'Cheddar',
         b: 'Limburger',
@@ -127,7 +127,7 @@ export const quizData = {
     {
       text:
         'Which Dutch city is famous for its canals and is often called "Little Amsterdam"?',
-      image: '/public/images/9.jpg',
+      image: './public/images/9.jpg',
       answers: {
         a: 'Utrecht',
         b: 'Haarlem',
@@ -139,7 +139,7 @@ export const quizData = {
     },
     {
       text: 'Which Dutch airport is one of the largest in Europe?',
-      image: '/public/images/10.jpg',
+      image: './public/images/10.jpg',
       answers: {
         a: 'Schiphol',
         b: 'Eindhoven',
@@ -151,8 +151,8 @@ export const quizData = {
     },
     {
       text:
-        'Which holiday is celebrated in the Netherlands on April 27, when everyone wears orange?',
-      image: '/public/images/11.jpg',
+        'Which holiday is celebrated in the Netherlands, when everyone wears orange?',
+      image: './public/images/11.jpg',
       answers: {
         a: 'Independence Day',
         b: 'Amsterdam Day',
@@ -163,4 +163,20 @@ export const quizData = {
       selected: null,
     },
   ],
+};
+const STORAGE_KEY = 'quiz-progress';
+
+export const saveQuizProgress = () => {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(quizData));
+};
+
+export const loadQuizProgress = () => {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    Object.assign(quizData, JSON.parse(saved));
+  }
+};
+
+export const clearQuizProgress = () => {
+  localStorage.removeItem(STORAGE_KEY); // Clear saved progress
 };

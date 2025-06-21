@@ -2,6 +2,7 @@ import { USER_INTERFACE_ID } from '../constants.js';
 import { createFinalResultElement } from '../views/finalResultView.js';
 import { initWelcomePage } from './welcomePage.js';
 import { quizData } from '../data.js';
+import { clearQuizProgress } from '../data.js';
 import { createDisappointingElem } from '../views/disappointingView.js';
 import { createHappyCatElem } from '../views/happyCatView.js';
 import { initialize } from '../pages/happyCat.js';
@@ -42,6 +43,7 @@ export const initFinalResultPage = () => {
       quizData.score = 0;
       quizData.catWalkStarted = false;
       quizData.questions.forEach((q) => (q.selected = null));
+      clearQuizProgress(); // Clear saved progress
       initWelcomePage();
     });
 };
