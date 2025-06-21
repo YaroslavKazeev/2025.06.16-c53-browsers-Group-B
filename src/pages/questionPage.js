@@ -23,7 +23,7 @@ function selectAnswer(e, answersListElement) {
   const correct = selectedAnswer.parentElement.dataset.correct === 'true';
   quizData.questions[quizData.currentQuestionIndex].selected =
     selectedAnswer.id;
-    saveQuizProgress();
+  saveQuizProgress();
   if (correct) {
     quizData.score++;
   }

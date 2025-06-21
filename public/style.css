@@ -91,11 +91,10 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
-
 /* O U R   S T Y L E S */
 body {
-  background-color: #D2E0FE;
-color: white;
+  background-color: #d2e0fe;
+  color: white;
 }
 
 .centered {
@@ -132,20 +131,21 @@ ul {
   border-color: #f44336 !important;
 }
 
-
 #user-interface {
-  background-color: #E8441A;
-  /*orange */
+  background-color: #e8441a;
   border-radius: 20px;
-  width: 90%;
-  max-height: 80%;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .question-wrapper {
   display: flex;
-  gap: 30px;
-  padding: 20px;
-  align-items: flex-start;
+  /* gap: 1rem; */
+  /* align-items: flex-start; */
+  justify-content: space-between;
+  /* max-width: 90%; */
 }
 
 .question-left {
@@ -157,22 +157,19 @@ ul {
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
-}
-
-.question-right h2 {
-  text-align: left;
+  width: 60%;
 }
 
 .question-image {
-  max-width: 300px;
-  height: 400px;
+  width: 400px;
+  height: 500px;
   border-radius: 10px;
   object-fit: cover;
 }
 
 /* For H1 */
 h1 {
-  font-family: "ADLaM Display", system-ui;
+  font-family: 'ADLaM Display', system-ui;
   font-weight: 400;
   font-style: normal;
   font-size: 40px;
@@ -182,63 +179,100 @@ h1 {
 
 /* For Paragraph on the welcome page */
 p {
-  font-family: "Abel", sans-serif;
+  font-family: 'Abel', sans-serif;
   font-weight: 400;
   font-size: 32px;
   line-height: auto;
   letter-spacing: 1%;
 }
 
-
-
-.question-title{
-  font-family: "Abel", sans-serif;
+.question-title {
+  font-family: 'Abel', sans-serif;
   font-weight: 400;
   font-style: normal;
-    line-height: auto;
+  line-height: auto;
   letter-spacing: 0%;
-  font-size: 36px;
+  font-size: 32px;
+  text-align: left;
+  max-width: 600px;
 }
 
-#answers-list{
+#answers-list {
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: flex-start;
+  gap: 10px;
 }
 
-#answers-list li{
+#answers-list li {
   width: 100%;
 }
 
-#next-question-button{
-  background-color: #20468B;
+#next-question-button {
+  background-color: #20468b;
   padding: 20px 30px;
   color: white;
-  font-family: "Abel", sans-serif;
+  font-family: 'Abel', sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 20px;
   outline: none;
   border: none;
   border-radius: 6px;
+  cursor: pointer;
 }
 
-#a, #b, #c, #d {
-  font-family: "Abel", sans-serif;
+#a,
+#b,
+#c,
+#d {
+  font-family: 'Abel', sans-serif;
   font-weight: 400;
-  font-size:22px;
+  font-size: 20px;
 }
 
-.button-content{
+.button-content {
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
   gap: 7px;
 }
 
-.arrow-svg{
+.arrow-svg {
   width: 20px;
+}
 
+.answer-button {
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #fcb89e;
+  color: #20468b;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.answer-button:hover {
+  background-color: #ff9b82;
+  border-color: rgb(143, 152, 250);
+}
+
+.bottom-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.score-element {
+  color: white;
+  font-family: 'Abel', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
 }
 
 body.welcome-background {
@@ -248,13 +282,13 @@ body.welcome-background {
 
 .welcome-box button {
   margin-top: 2rem;
-  background-color: #20468B;
+  background-color: #20468b;
   color: white;
   padding: 22px 72px;
-  border: 3px solid white;      /* ✅ White border */
+  border: 3px solid white; /* ✅ White border */
   border-radius: 12px;
   font-size: 20px;
-  font-family: "Abel", sans-serif;
+  font-family: 'Abel', sans-serif;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
@@ -272,7 +306,7 @@ body.welcome-background {
 }
 
 .welcome-box h1 {
-  font-family: "ADLaM Display", system-ui;
+  font-family: 'ADLaM Display', system-ui;
   font-weight: 400;
   font-size: 40px;
   margin-bottom: 0.5rem;
@@ -284,7 +318,7 @@ body.welcome-background {
 }
 
 .welcome-box p {
-  font-family: "Abel", sans-serif;
+  font-family: 'Abel', sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 1.6;
@@ -296,7 +330,7 @@ body.welcome-background {
   background-color: rgba(232, 68, 26, 0.95);
   padding: 2rem 3rem;
   max-width: 900px;
-  width: 60%;       
+  width: 60%;
   margin: auto;
   border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -306,7 +340,6 @@ body.welcome-background {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 
 .flag-icon {
   width: 50px;
