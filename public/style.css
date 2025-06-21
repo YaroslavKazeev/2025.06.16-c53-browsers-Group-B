@@ -36,3 +36,7 @@ ul {
   color: white;
   border-color: #f44336 !important;
 }
+
+#catImage {
+  left: 0;
+}

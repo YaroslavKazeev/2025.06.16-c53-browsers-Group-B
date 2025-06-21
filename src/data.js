@@ -10,6 +10,7 @@
 */
 
 export const quizData = {
+  catWalkPlayed: false,
   currentQuestionIndex: 0,
   score: 0,
   questions: [
