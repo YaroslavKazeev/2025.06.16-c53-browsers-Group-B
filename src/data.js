@@ -150,7 +150,7 @@ export const quizData = {
     },
     {
       text:
-        'Which holiday is celebrated in the Netherlands on April 27, when everyone wears orange?',
+        'Which holiday is celebrated in the Netherlands, when everyone wears orange?',
       image: './public/images/11.jpg',
       answers: {
         a: 'Independence Day',
