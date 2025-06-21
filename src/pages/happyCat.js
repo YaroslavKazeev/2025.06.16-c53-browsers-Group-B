@@ -12,15 +12,16 @@ let midpoint;
 let endX;
 
 export function initialize(img) {
-  img.style.position = 'fixed';
-  img.style.left = -window.innerWidth / 2;
+  img.style.position = 'static';
+  quizData.catWalkStarted = true;
+  img.style.left = `${-window.innerWidth / 2}`;
+  console.log(img.style.left);
   midpoint = (window.innerWidth - img.offsetWidth) / 2;
   endX = window.innerWidth + img.offsetWidth;
   startWalkToMid(img);
 }
 
 function startWalkToMid(img) {
-  // img.src = WALKING_CAT_URL;
   const walkMid = img.animate(
     [
       { transform: `translateX(${-img.offsetWidth}px)` },
@@ -46,5 +47,4 @@ function startWalkToEnd(img) {
     ],
     { duration: WALK_TIME_MS, fill: 'forwards' }
   );
-  quizData.catWalkPlayed = true;
 }

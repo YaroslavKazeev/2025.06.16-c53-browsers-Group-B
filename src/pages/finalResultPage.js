@@ -5,8 +5,6 @@ import { quizData } from '../data.js';
 import { createDisappointingElem } from '../views/disappointingView.js';
 import { createHappyCatElem } from '../views/happyCatView.js';
 import { initialize } from '../pages/happyCat.js';
-const WALKING_CAT_URL =
-  'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2x0a212MXNmNTQxcGQwZms5ZDBhdXhzbjRpa2Z0MzdwY2dka280bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/OIkDfT6z8aZP0kYJPy/giphy.gif';
 
 export const initFinalResultPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -27,15 +25,15 @@ export const initFinalResultPage = () => {
     const disappointingElem = createDisappointingElem();
     userInterface.appendChild(disappointingElem);
   } else {
-    const happyCatElem = createHappyCatElem();
-    happyCatElem.id = 'catImage';
-    happyCatElem.src = WALKING_CAT_URL;
-    userInterface.appendChild(happyCatElem);
+    const divCatElem = createHappyCatElem();
+    document.body.appendChild(divCatElem);
 
     // happyCatWalkDance(happyCatElem);
+    const happyCatElem = divCatElem.children[0];
+    console.log(divCatElem);
 
     happyCatElem.addEventListener('load', () => {
-      if (!quizData.catWalkPlayed) {
+      if (!quizData.catWalkStarted) {
         initialize(happyCatElem);
       }
     });
