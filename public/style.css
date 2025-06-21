@@ -91,10 +91,9 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
-
 /* O U R   S T Y L E S */
 body {
-  background-color: #D2E0FE;
+  background-color: #d2e0fe;
   color: white;
 }
 
@@ -133,7 +132,7 @@ ul {
 }
 
 #user-interface {
-  background-color: #E8441A;
+  background-color: #e8441a;
   border-radius: 20px;
   max-width: 1280px;
   width: 100%;
@@ -161,9 +160,6 @@ ul {
   width: 60%;
 }
 
-
-
-
 .question-image {
   width: 400px;
   height: 500px;
@@ -173,7 +169,7 @@ ul {
 
 /* For H1 */
 h1 {
-  font-family: "ADLaM Display", system-ui;
+  font-family: 'ADLaM Display', system-ui;
   font-weight: 400;
   font-style: normal;
   font-size: 40px;
@@ -183,7 +179,7 @@ h1 {
 
 /* For Paragraph on the welcome page */
 p {
-  font-family: "Abel", sans-serif;
+  font-family: 'Abel', sans-serif;
   font-weight: 400;
   font-size: 32px;
   line-height: auto;
@@ -191,7 +187,7 @@ p {
 }
 
 .question-title {
-  font-family: "Abel", sans-serif;
+  font-family: 'Abel', sans-serif;
   font-weight: 400;
   font-style: normal;
   line-height: auto;
@@ -200,7 +196,6 @@ p {
   text-align: left;
   max-width: 600px;
 }
-
 
 #answers-list {
   display: flex;
@@ -212,14 +207,13 @@ p {
 
 #answers-list li {
   width: 100%;
-
 }
 
 #next-question-button {
-  background-color: #20468B;
+  background-color: #20468b;
   padding: 20px 30px;
   color: white;
-  font-family: "Abel", sans-serif;
+  font-family: 'Abel', sans-serif;
   font-weight: 400;
   font-size: 20px;
   outline: none;
@@ -232,7 +226,7 @@ p {
 #b,
 #c,
 #d {
-  font-family: "Abel", sans-serif;
+  font-family: 'Abel', sans-serif;
   font-weight: 400;
   font-size: 20px;
 }
@@ -254,7 +248,7 @@ p {
   padding: 10px 15px;
   font-size: 16px;
   background-color: #fcb89e;
-  color: #20468B;
+  color: #20468b;
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -276,7 +270,7 @@ p {
 
 .score-element {
   color: white;
-  font-family: "Abel", sans-serif;
+  font-family: 'Abel', sans-serif;
   font-weight: 400;
   font-size: 22px;
 }
