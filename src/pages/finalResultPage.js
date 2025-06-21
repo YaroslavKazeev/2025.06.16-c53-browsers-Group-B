@@ -24,7 +24,7 @@ export const initFinalResultPage = () => {
   userInterface.appendChild(finalResultElement);
   if (correctAnswers / totalQuestions <= 0.8) {
     const disappointingElem = createDisappointingElem();
-    userInterface.appendChild(disappointingElem);
+    finalResultElement.appendChild(disappointingElem);
   } else {
     const divCatElem = createHappyCatElem();
     userInterface.appendChild(divCatElem);

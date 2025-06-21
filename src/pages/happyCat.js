@@ -14,7 +14,6 @@ export function initialize(divCatElem) {
   divCatElem.style.transform = `translateX(${
     -(window.innerWidth - img.offsetWidth) / 2
   }px)`;
-  // 'translateX(-50%)';
   img.style.position = 'static';
   img.style.left = `${-window.innerWidth / 2}`;
   midpoint = (window.innerWidth - img.offsetWidth) / 2;
