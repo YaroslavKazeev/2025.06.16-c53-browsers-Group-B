@@ -21,20 +21,16 @@ export const initFinalResultPage = () => {
   );
   finalResultElement.classList.add('container');
   userInterface.appendChild(finalResultElement);
-  if (correctAnswers / totalQuestions > 0.8) {
+  if (correctAnswers / totalQuestions <= 0.8) {
     const disappointingElem = createDisappointingElem();
     userInterface.appendChild(disappointingElem);
   } else {
     const divCatElem = createHappyCatElem();
-    document.body.appendChild(divCatElem);
-
-    // happyCatWalkDance(happyCatElem);
-    const happyCatElem = divCatElem.children[0];
-    console.log(divCatElem);
-
-    happyCatElem.addEventListener('load', () => {
+    userInterface.appendChild(divCatElem);
+    const happyCatImage = divCatElem.children[0];
+    happyCatImage.addEventListener('load', () => {
       if (!quizData.catWalkStarted) {
-        initialize(happyCatElem);
+        initialize(divCatElem);
       }
     });
   }
@@ -44,6 +40,7 @@ export const initFinalResultPage = () => {
     .addEventListener('click', () => {
       quizData.currentQuestionIndex = 0;
       quizData.score = 0;
+      quizData.catWalkStarted = false;
       quizData.questions.forEach((q) => (q.selected = null));
       initWelcomePage();
     });

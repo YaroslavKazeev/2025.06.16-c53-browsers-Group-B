@@ -1,9 +1,6 @@
 import { quizData } from '../data.js';
-
-const DANCING_CAT_URL =
-  'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
-const WALKING_CAT_URL =
-  'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2x0a212MXNmNTQxcGQwZms5ZDBhdXhzbjRpa2Z0MzdwY2dka280bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/OIkDfT6z8aZP0kYJPy/giphy.gif';
+import { WALKING_CAT_URL } from '../constants.js';
+import { DANCING_CAT_URL } from '../constants.js';
 
 const DANCE_TIME_MS = 1000;
 const WALK_TIME_MS = 1000;
@@ -11,11 +8,15 @@ const WALK_TIME_MS = 1000;
 let midpoint;
 let endX;
 
-export function initialize(img) {
-  img.style.position = 'static';
+export function initialize(divCatElem) {
   quizData.catWalkStarted = true;
+  const img = divCatElem.children[0];
+  divCatElem.style.transform = `translateX(${
+    -(window.innerWidth - img.offsetWidth) / 2
+  }px)`;
+  // 'translateX(-50%)';
+  img.style.position = 'static';
   img.style.left = `${-window.innerWidth / 2}`;
-  console.log(img.style.left);
   midpoint = (window.innerWidth - img.offsetWidth) / 2;
   endX = window.innerWidth + img.offsetWidth;
   startWalkToMid(img);
