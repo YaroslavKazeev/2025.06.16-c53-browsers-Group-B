@@ -21,24 +21,21 @@ export const createQuestionElement = (
   wrapper.classList.add('question-wrapper'); //this id for styling
   // const element = document.createElement('div');
 
-  //Left image
+  // Create the left column with the image
   const leftCol = document.createElement('div');
   leftCol.classList.add('question-left');
   const image = createImageElement(question.image || '', question.text);
   leftCol.appendChild(image);
 
-  //Right: content
+  // Create the right column with the question, answers, score, and next button
   const rightCol = document.createElement('div');
   rightCol.classList.add('question-right');
 
-  //Add a number for h1 before a question
-  // I use String.raw just to get fancy colors for the HTML in VS Code.
+  // Add the question number,text, answers list, score, and next button to the right column
   rightCol.innerHTML = String.raw`  
     <h2 class="question-title">${questionNumber}. ${question.text}</h2>
-
     <ul id="${ANSWERS_LIST_ID}">
     </ul>
-
     <div class="bottom-wrapper">
       <div id="${SCORE_DISPLAY_ID}" class="score-element">Score: ${score}/${totalQuestions}</div>
       <button id="${NEXT_QUESTION_BUTTON_ID}">
@@ -53,6 +50,7 @@ export const createQuestionElement = (
     
   `;
 
+  // Assemble the full question element
   wrapper.appendChild(leftCol);
   wrapper.appendChild(rightCol);
 

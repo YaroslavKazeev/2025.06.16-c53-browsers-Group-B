@@ -8,18 +8,24 @@ import { createHappyCatElem } from '../views/happyCatView.js';
 import { initialize } from '../pages/happyCat.js';
 
 export const initFinalResultPage = () => {
+  // Prepare the UI for the final result page
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
   userInterface.classList.add('welcome-box');
+
   const totalQuestions = quizData.questions.length;
   const correctAnswers = quizData.questions.filter(
     (q) => q.selected === q.correct
   ).length;
+
+  // Create and append the final result element
   const finalResultElement = createFinalResultElement(
     correctAnswers,
     totalQuestions
   );
   userInterface.appendChild(finalResultElement);
+
+  // Show disappointing or happy cat element based on score
   if (correctAnswers / totalQuestions <= 0.8) {
     const disappointingElem = createDisappointingElem();
     finalResultElement.appendChild(disappointingElem);
@@ -33,6 +39,8 @@ export const initFinalResultPage = () => {
       }
     });
   }
+
+  // Attach event listener for restarting the quiz and reset all relevant data
   document
     .getElementById('restart-quiz-button')
     .addEventListener('click', () => {

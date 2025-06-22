@@ -7,7 +7,7 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
-import { initFinalResultPage } from './finalResultPage.js'; //  Import final result page
+import { initFinalResultPage } from './finalResultPage.js';
 import { saveQuizProgress } from '../data.js';
 
 function setStatusClass(element, correct) {
@@ -19,6 +19,7 @@ function setStatusClass(element, correct) {
 }
 
 function selectAnswer(e, answersListElement) {
+  // Get the selected answer and check if it is correct
   const selectedAnswer = e.target;
   const correct = selectedAnswer.parentElement.dataset.correct === 'true';
   quizData.questions[quizData.currentQuestionIndex].selected =
@@ -29,7 +30,7 @@ function selectAnswer(e, answersListElement) {
   }
   setStatusClass(selectedAnswer, correct);
 
-  // Disable all buttons after selection
+  // Disable all answer buttons and visually mark the correct answer
   Array.from(answersListElement.children).forEach((listItem) => {
     const button = listItem.children[0];
     button.disabled = true;
@@ -39,6 +40,7 @@ function selectAnswer(e, answersListElement) {
     }
   });
 
+  // Update the score display in the UI
   const scoreDisplay = document.getElementById(SCORE_DISPLAY_ID);
   if (scoreDisplay) {
     scoreDisplay.textContent = `Score: ${quizData.score}/${quizData.questions.length}`;
@@ -46,23 +48,24 @@ function selectAnswer(e, answersListElement) {
 }
 
 export const initQuestionPage = () => {
+  // Prepare the UI for a new question
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
+  // Get the current question data
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
-  // Create a question element, passing the current score
+  // Create the question element, passing the current score
   const questionElement = createQuestionElement(
     currentQuestion,
     quizData.score,
     quizData.currentQuestionIndex + 1,
     quizData.questions.length
   );
-
   userInterface.appendChild(questionElement);
 
+  // Create and append answer elements, and attach event listeners
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
-
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
     // Setting the attribute correct/incorrect answer to each button(list element)
@@ -74,7 +77,6 @@ export const initQuestionPage = () => {
     answerElement.addEventListener('click', (e) =>
       selectAnswer(e, answersListElement)
     );
-
     answersListElement.appendChild(answerElement);
   }
 
@@ -88,8 +90,8 @@ const nextQuestion = () => {
   saveQuizProgress();
 
   if (quizData.currentQuestionIndex >= quizData.questions.length) {
-    initFinalResultPage(); // Show results when finished
+    initFinalResultPage();
   } else {
-    initQuestionPage(); // Go to next question
+    initQuestionPage();
   }
 };
