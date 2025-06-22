@@ -10,5 +10,5 @@ export const START_QUIZ_BUTTON_ID = 'start-quiz-button';
 export const ANSWERS_LIST_ID = 'answers-list';
 export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
 export const SCORE_DISPLAY_ID = 'score-display';
-export const DANCING_CAT_URL = '/public/images/dancing_cat.gif';
-export const WALKING_CAT_URL = '/public/images/walking_cat.webp';
+export const DANCING_CAT_URL = './public/images/dancing_cat.gif';
+export const WALKING_CAT_URL = './public/images/walking_cat.webp';
