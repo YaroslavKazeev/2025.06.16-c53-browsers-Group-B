@@ -11,12 +11,10 @@ export const initFinalResultPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
   userInterface.classList.add('welcome-box');
-
   const totalQuestions = quizData.questions.length;
   const correctAnswers = quizData.questions.filter(
     (q) => q.selected === q.correct
   ).length;
-
   const finalResultElement = createFinalResultElement(
     correctAnswers,
     totalQuestions
@@ -35,7 +33,6 @@ export const initFinalResultPage = () => {
       }
     });
   }
-
   document
     .getElementById('restart-quiz-button')
     .addEventListener('click', () => {
