@@ -86,12 +86,12 @@ export const initQuestionPage = () => {
 };
 
 const nextQuestion = () => {
-  quizData.currentQuestionIndex++;
-  saveQuizProgress();
-
-  if (quizData.currentQuestionIndex >= quizData.questions.length) {
-    initFinalResultPage();
-  } else {
+  if (quizData.currentQuestionIndex < quizData.questions.length - 1) {
+    quizData.currentQuestionIndex++;
+    saveQuizProgress();
     initQuestionPage();
+  } else {
+    saveQuizProgress();
+    initFinalResultPage();
   }
 };
