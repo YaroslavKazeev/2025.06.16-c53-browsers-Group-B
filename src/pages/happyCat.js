@@ -11,12 +11,10 @@ let endX;
 export function initialize(divCatElem) {
   quizData.catWalkStarted = true;
   const img = divCatElem.children[0];
-  divCatElem.style.transform = `translateX(${
-    -(window.innerWidth - img.offsetWidth) / 2
-  }px)`;
-  img.style.position = 'static';
-  img.style.left = `${-window.innerWidth / 2}`;
-  midpoint = (window.innerWidth - img.offsetWidth) / 2;
+  divCatElem.style.position = 'static';
+  // img.style.transform = `translateX(${-img.offsetWidth / 2}px)`;
+  // img.style.left = `${-(window.innerWidth + img.offsetWidth) / 2}`;
+  midpoint = (window.innerWidth - 2 * img.offsetWidth) / 2;
   endX = window.innerWidth + img.offsetWidth;
   startWalkToMid(img);
 }

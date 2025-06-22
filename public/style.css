@@ -353,7 +353,3 @@ body.welcome-background {
   transform: rotate(-10deg);
   filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.4));
 }
-
-#catImage {
-  left: 0;
-}

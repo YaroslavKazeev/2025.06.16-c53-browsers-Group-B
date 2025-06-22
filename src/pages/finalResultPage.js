@@ -10,6 +10,7 @@ import { initialize } from '../pages/happyCat.js';
 export const initFinalResultPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
+  userInterface.classList.add('welcome-box');
 
   const totalQuestions = quizData.questions.length;
   const correctAnswers = quizData.questions.filter(
@@ -39,6 +40,7 @@ export const initFinalResultPage = () => {
   document
     .getElementById('restart-quiz-button')
     .addEventListener('click', () => {
+      userInterface.classList.remove('welcome-box');
       quizData.currentQuestionIndex = 0;
       quizData.score = 0;
       quizData.catWalkStarted = false;

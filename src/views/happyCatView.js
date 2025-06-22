@@ -6,7 +6,7 @@ import { WALKING_CAT_URL } from '../constants.js';
 export const createHappyCatElem = () => {
   const element = document.createElement('div');
   element.innerHTML = String.raw`
-  <img id="catImage" src=${WALKING_CAT_URL} alt="Cat picture" />
+  <img src=${WALKING_CAT_URL} alt="Cat picture" />
   `;
   return element;
 };

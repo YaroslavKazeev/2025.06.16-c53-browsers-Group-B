@@ -6,7 +6,6 @@
  */
 export const createFinalResultElement = (score, total) => {
   const element = document.createElement('div');
-  element.classList.add('welcome-box');
   element.innerHTML = String.raw`
   <div>
     <h1>Quiz Completed</h1>
