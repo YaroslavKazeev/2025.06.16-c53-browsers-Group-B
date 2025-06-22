@@ -21,7 +21,6 @@ export const initFinalResultPage = () => {
     correctAnswers,
     totalQuestions
   );
-  // finalResultElement.classList.add('container');
   userInterface.appendChild(finalResultElement);
   if (correctAnswers / totalQuestions <= 0.8) {
     const disappointingElem = createDisappointingElem();
