@@ -105,12 +105,6 @@ body {
   text-align: center;
 }
 
-.scrollable {
-  height: auto;
-  max-height: 80vh;
-  overflow: auto;
-}
-
 ul {
   list-style: none;
   padding: 0;
