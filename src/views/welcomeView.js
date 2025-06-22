@@ -8,7 +8,7 @@ export const createWelcomeElement = () => {
   element.classList.add('welcome-box');
   element.innerHTML = String.raw`
     <h1>Netherlands Quiz: <br>How much do you know?
-      <img src="./public/images/flag.png" alt="Dutch flag" class="flag-icon" />
+      <img src="/public/images/flag.png" alt="Dutch flag" class="flag-icon" />
     </h1>
     <hr class="divider">
     <p>
