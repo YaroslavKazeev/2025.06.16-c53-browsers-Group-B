@@ -9,13 +9,14 @@ let midpoint;
 let endX;
 
 export function initialize(divCatElem) {
+  // Set the cat walk state and get the image element
   quizData.catWalkStarted = true;
   const img = divCatElem.children[0];
   divCatElem.style.position = 'static';
-  // img.style.transform = `translateX(${-img.offsetWidth / 2}px)`;
-  // img.style.left = `${-(window.innerWidth + img.offsetWidth) / 2}`;
+
   midpoint = (window.innerWidth - 2 * img.offsetWidth) / 2;
   endX = window.innerWidth + img.offsetWidth;
+
   startWalkToMid(img);
 }
 
