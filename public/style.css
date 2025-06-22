@@ -132,7 +132,6 @@ ul {
 }
 
 #user-interface {
-  background-color: #e8441a;
   border-radius: 20px;
   max-width: 1280px;
   width: 100%;
@@ -141,6 +140,12 @@ ul {
 }
 
 .question-wrapper {
+  background-color: #e8441a;
+  border-radius: 20px;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
   display: flex;
   /* gap: 1rem; */
   /* align-items: flex-start; */
